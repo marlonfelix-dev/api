@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @api {get} /users Lista todos os usuários
  * @apiName UsersList
@@ -6,4 +7,6 @@
  * @apiPermission Token
  * @apiHeader {String} Authorization Bearer token
  *
- */
+ *
+ * @api {get} /properties Lista todos os imóveis
+ */ 

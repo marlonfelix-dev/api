@@ -1,11 +1,15 @@
 import { Application } from 'express';
 
-import UsersRoutes from './modules/users/routes/index';
+import userRoutes from './routes/userRoutes';
+import propertyRoutes from './routes/propertyRoutes';
 
 const urlBase = '/api/v1';
 
 const allRoutes = (server: Application) => {
-  server.use(`${urlBase}/users`, UsersRoutes);
+  
+  // Registra as rotas
+  server.use(`${urlBase}/users`, userRoutes);
+  server.use(`${urlBase}/properties`, propertyRoutes);
 
   // Default route errorhandler
   server.use(function(req, res, next) {
@@ -16,6 +20,8 @@ const allRoutes = (server: Application) => {
     });
     next();
   });
+
+  
 };
 
 export default allRoutes;
